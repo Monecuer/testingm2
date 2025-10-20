@@ -1,0 +1,33 @@
+# Add to .gitignore
+node_modules/
+.next/
+dist/
+*.mp4
+*.zip
+*.exe
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# IDE/editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Caches and build outputs
+.cache/
+.parcel-cache/
+out/
+build/
+coverage/
