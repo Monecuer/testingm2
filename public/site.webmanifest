@@ -1,0 +1,40 @@
+{
+  "name": "Monecuer Inc.",
+  "short_name": "Monecuer",
+  "description": "Monecuer Inc. — Advanced Software Ecosystems & AI Solutions. A Zimbabwean technology company building AI systems, POS, cybersecurity, and cloud automation platforms.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A1F",
+  "theme_color": "#020617",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": [
+    "technology",
+    "business",
+    "software",
+    "cybersecurity",
+    "cloud"
+  ],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32 48x48 64x64 128x128",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/og-image.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "start_url_comment": "Ensures the app opens from root on PWA install"
+}
