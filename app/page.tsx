@@ -15,6 +15,11 @@ import {
   Code,
   Rocket,
   Headphones,
+  Shield,
+  Lock,
+  KeyRound,
+  Bug,
+  Eye,
 } from "lucide-react";
 
 export default function Home() {
@@ -27,32 +32,60 @@ export default function Home() {
     {
       icon: <FileText className="w-8 h-8 text-indigo-600" />,
       title: "Proposal & Agreement",
-      desc: "We present a clear plan with deliverables, timelines, and pricing to ensure transparency.",
+      desc: "We present a transparent plan with deliverables, timelines, and pricing — aligning expectations early.",
     },
     {
       icon: <DollarSign className="w-8 h-8 text-emerald-600" />,
       title: "Kickoff & Deposit",
-      desc: "Once the initial deposit is confirmed, we set up timelines, milestones, and communication channels.",
+      desc: "Once onboarded, timelines and milestones are locked in for focused collaboration.",
     },
     {
       icon: <PenTool className="w-8 h-8 text-yellow-600" />,
       title: "Design & Prototype",
-      desc: "We design stunning UI/UX prototypes so you can visualize your final product before coding begins.",
+      desc: "Our creative team crafts high-fidelity UI/UX mockups and prototypes to visualize your product.",
     },
     {
       icon: <Code className="w-8 h-8 text-purple-600" />,
       title: "Development & QA",
-      desc: "Our engineers bring your idea to life with clean code and perform rigorous quality testing.",
+      desc: "Using modern frameworks and clean code, our engineers develop and rigorously test your product.",
     },
     {
       icon: <Rocket className="w-8 h-8 text-rose-600" />,
       title: "Launch & Handover",
-      desc: "We deploy your project live with domain setup, analytics, and full documentation.",
+      desc: "We deploy on production servers, connect your domain, and provide documentation and training.",
     },
     {
       icon: <Headphones className="w-8 h-8 text-cyan-600" />,
       title: "Support & Growth",
-      desc: "We continue optimizing, maintaining, and improving your product for long-term success.",
+      desc: "We maintain, secure, and upgrade your software as your business scales.",
+    },
+  ];
+
+  const cyberFeatures = [
+    {
+      icon: <Shield className="text-blue-400 w-10 h-10" />,
+      title: "Advanced Threat Protection",
+      desc: "AI-driven defense systems proactively detect and neutralize security threats before impact.",
+    },
+    {
+      icon: <Lock className="text-green-400 w-10 h-10" />,
+      title: "Legal Penetration Testing",
+      desc: "Certified ethical hackers conduct authorized security assessments to safeguard your assets.",
+    },
+    {
+      icon: <KeyRound className="text-yellow-400 w-10 h-10" />,
+      title: "Data Encryption & Compliance",
+      desc: "We secure your data with enterprise-grade encryption aligned with GDPR and ISO standards.",
+    },
+    {
+      icon: <Bug className="text-red-400 w-10 h-10" />,
+      title: "Incident Response & Forensics",
+      desc: "Our rapid-response team handles breaches, logs evidence, and mitigates damage instantly.",
+    },
+    {
+      icon: <Eye className="text-purple-400 w-10 h-10" />,
+      title: "24/7 Monitoring & Intelligence",
+      desc: "Round-the-clock surveillance with AI analytics for abnormal activity detection and alerts.",
     },
   ];
 
@@ -61,7 +94,7 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      {/* 🌍 How We Work Section */}
+      {/* 🧭 Process Section */}
       <section className="section container-xl">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -77,8 +110,8 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="p text-center mt-3 max-w-2xl mx-auto"
         >
-          Every project we handle follows a streamlined, transparent, and
-          creative 7-step process — ensuring quality from concept to launch.
+          From discovery to deployment — Monecuer’s structured 7-step process
+          ensures each solution is precise, efficient, and built for scale.
         </motion.p>
 
         <div className="relative max-w-5xl mx-auto mt-10">
@@ -87,8 +120,7 @@ export default function Home() {
             whileInView={{ height: "100%" }}
             transition={{ duration: 1.8, ease: "easeInOut" }}
             className="absolute left-1/2 transform -translate-x-1/2 bg-gradient-to-b from-blue-500 to-cyan-400 w-[3px] rounded-full"
-          ></motion.div>
-
+          />
           <div className="space-y-14 relative z-10">
             {steps.map((s, i) => (
               <motion.div
@@ -115,6 +147,50 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* 🔐 Cyber Security Section */}
+      <section className="py-24 bg-gradient-to-b from-[#0a0a1f] via-[#0e0e2e] to-[#0a0a1f] text-white text-center">
+        <motion.h2
+          className="text-4xl font-bold mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+        >
+          Cyber Security Division — Protecting Innovation
+        </motion.h2>
+        <motion.p
+          className="text-gray-300 max-w-3xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          Monecuer’s Cyber Division safeguards businesses across Africa with
+          AI-powered defense, ethical hacking, and 24/7 monitoring — ensuring
+          your data, ideas, and customers remain protected.
+        </motion.p>
+
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-5">
+          {cyberFeatures.map((f, i) => (
+            <motion.div
+              key={i}
+              className="p-8 bg-white/10 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10 hover:border-blue-400 hover:shadow-blue-500/30 transition"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+            >
+              <div className="flex justify-center mb-5">{f.icon}</div>
+              <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
+              <p className="text-gray-300">{f.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          className="mt-14 px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full font-semibold text-white shadow-lg hover:shadow-blue-500/40 transition"
+        >
+          Request a Security Audit →
+        </motion.button>
       </section>
 
       {/* 🌟 Feature Highlights */}
