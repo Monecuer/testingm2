@@ -1,50 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Core Pages -->
-  <url><loc>https://www.monecuer.com/</loc></url>
-  <url><loc>https://www.monecuer.com/about</loc></url>
-  <url><loc>https://www.monecuer.com/solutions</loc></url>
-  <url><loc>https://www.monecuer.com/products</loc></url>
-  <url><loc>https://www.monecuer.com/process</loc></url>
-  <url><loc>https://www.monecuer.com/industries</loc></url>
-  <url><loc>https://www.monecuer.com/portfolio</loc></url>
-  <url><loc>https://www.monecuer.com/pricing</loc></url>
-  <url><loc>https://www.monecuer.com/blog</loc></url>
-  <url><loc>https://www.monecuer.com/contact</loc></url>
-  <url><loc>https://www.monecuer.com/careers</loc></url>
+  <!-- 🌍 Core Pages -->
+  <url>
+    <loc>https://www.monecuer.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/about</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/solutions</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/products</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/process</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/portfolio</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/pricing</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/industries</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/cybersecurity</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/blog</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/contact</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/careers</loc>
+  </url>
 
-  <!-- 🧠 AI / Cloud / Cyber -->
-  <url><loc>https://www.monecuer.com/cybersecurity</loc></url>
-  <url><loc>https://www.monecuer.com/ai</loc></url>
-  <url><loc>https://www.monecuer.com/cloud</loc></url>
-  <url><loc>https://www.monecuer.com/pos</loc></url>
-
-  <!-- 💼 Company & Legal -->
-  <url><loc>https://www.monecuer.com/investors</loc></url>
-  <url><loc>https://www.monecuer.com/developers</loc></url>
-  <url><loc>https://www.monecuer.com/privacy</loc></url>
-  <url><loc>https://www.monecuer.com/terms</loc></url>
-  <url><loc>https://www.monecuer.com/faq</loc></url>
-
-  <!-- 🔐 Auth / Dashboard -->
-  <url><loc>https://www.monecuer.com/login</loc></url>
-  <url><loc>https://www.monecuer.com/register</loc></url>
-  <url><loc>https://www.monecuer.com/dashboard</loc></url>
-
-  <!-- 📰 Blog Slugs -->
-  <url><loc>https://www.monecuer.com/blog/why-speed-wins</loc></url>
-  <url><loc>https://www.monecuer.com/blog/designing-trust</loc></url>
-  <url><loc>https://www.monecuer.com/blog/mvp-to-scale</loc></url>
-
-  <!-- Extended Project Pages -->
-  <url><loc>https://www.monecuer.com/portfolio/facegram</loc></url>
-  <url><loc>https://www.monecuer.com/portfolio/drivup</loc></url>
-  <url><loc>https://www.monecuer.com/portfolio/zimwebpro</loc></url>
-  <url><loc>https://www.monecuer.com/portfolio/pos</loc></url>
-
-  <!-- Metadata -->
-  <url><loc>https://www.monecuer.com/developers/api</loc></url>
-  <url><loc>https://www.monecuer.com/developers/docs</loc></url>
+  <!-- ⚖️ Legal & Info -->
+  <url>
+    <loc>https://www.monecuer.com/privacy</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/terms</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/faq</loc>
+  </url>
 
 </urlset>
