@@ -95,7 +95,7 @@ export default function Home() {
       <Hero />
 
       {/* 🧭 Process Section */}
-      <section className="section container-xl">
+      <section className="section container-xl px-4 sm:px-6 lg:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="p text-center mt-3 max-w-2xl mx-auto"
+          className="p text-center mt-3 max-w-2xl mx-auto px-3"
         >
           From discovery to deployment — Monecuer’s structured 7-step process
           ensures each solution is precise, efficient, and built for scale.
@@ -119,14 +119,14 @@ export default function Home() {
             initial={{ height: 0 }}
             whileInView={{ height: "100%" }}
             transition={{ duration: 1.8, ease: "easeInOut" }}
-            className="absolute left-1/2 transform -translate-x-1/2 bg-gradient-to-b from-blue-500 to-cyan-400 w-[3px] rounded-full"
+            className="absolute left-1/2 transform -translate-x-1/2 bg-gradient-to-b from-blue-500 to-cyan-400 w-[3px] rounded-full hidden md:block"
           />
-          <div className="space-y-14 relative z-10">
+          <div className="space-y-10 sm:space-y-14 relative z-10">
             {steps.map((s, i) => (
               <motion.div
                 key={i}
-                initial={{ x: i % 2 === 0 ? -60 : 60, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`flex flex-col sm:flex-row items-center sm:items-start gap-6 ${
                   i % 2 === 0 ? "sm:flex-row-reverse" : ""
@@ -135,7 +135,7 @@ export default function Home() {
                 <div className="bg-white shadow-md border border-gray-200 rounded-full p-4 flex-shrink-0 dark:bg-slate-900 dark:border-slate-700">
                   {s.icon}
                 </div>
-                <div className="max-w-md">
+                <div className="max-w-md text-center sm:text-left">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {s.title}
                   </h3>
@@ -150,16 +150,16 @@ export default function Home() {
       </section>
 
       {/* 🔐 Cyber Security Section */}
-      <section className="py-24 bg-gradient-to-b from-[#0a0a1f] via-[#0e0e2e] to-[#0a0a1f] text-white text-center">
+      <section className="py-24 bg-gradient-to-b from-[#0a0a1f] via-[#0e0e2e] to-[#0a0a1f] text-white text-center px-4 sm:px-8">
         <motion.h2
-          className="text-4xl font-bold mb-6"
+          className="text-3xl sm:text-4xl font-bold mb-6"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
           Cyber Security Division — Protecting Innovation
         </motion.h2>
         <motion.p
-          className="text-gray-300 max-w-3xl mx-auto mb-12"
+          className="text-gray-300 max-w-3xl mx-auto mb-12 text-base sm:text-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -169,32 +169,34 @@ export default function Home() {
           your data, ideas, and customers remain protected.
         </motion.p>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-5">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10 max-w-6xl mx-auto">
           {cyberFeatures.map((f, i) => (
             <motion.div
               key={i}
-              className="p-8 bg-white/10 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10 hover:border-blue-400 hover:shadow-blue-500/30 transition"
+              className="p-6 sm:p-8 bg-white/10 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10 hover:border-blue-400 hover:shadow-blue-500/30 transition"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
             >
               <div className="flex justify-center mb-5">{f.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
-              <p className="text-gray-300">{f.desc}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-3">
+                {f.title}
+              </h3>
+              <p className="text-gray-300 text-sm sm:text-base">{f.desc}</p>
             </motion.div>
           ))}
         </div>
 
         <motion.button
           whileHover={{ scale: 1.05 }}
-          className="mt-14 px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full font-semibold text-white shadow-lg hover:shadow-blue-500/40 transition"
+          className="mt-14 px-6 sm:px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-full font-semibold text-white shadow-lg hover:shadow-blue-500/40 transition text-sm sm:text-base"
         >
           Request a Security Audit →
         </motion.button>
       </section>
 
       {/* 🌟 Feature Highlights */}
-      <section className="section container-xl">
+      <section className="section container-xl px-4 sm:px-8">
         <h2 className="h2 text-center">What We Deliver</h2>
         <p className="p text-center mt-3">
           From startups to enterprises — our expertise spans multiple industries.
@@ -203,9 +205,9 @@ export default function Home() {
       </section>
 
       {/* 🔢 Animated Counters */}
-      <section className="section container-xl">
+      <section className="section container-xl px-4 sm:px-8">
         <h2 className="h2 text-center">Our Progress</h2>
-        <div className="grid md:grid-cols-3 gap-6 mt-6 text-center">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6 text-center">
           <AnimatedCounter end={120} label="Projects Delivered" />
           <AnimatedCounter end={45} label="Active Clients" />
           <AnimatedCounter end={12} label="Industries Served" />
@@ -213,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* 🤝 Sponsors */}
-      <section className="section container-xl">
+      <section className="section container-xl px-4 sm:px-8">
         <Sponsors />
       </section>
 
