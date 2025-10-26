@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -20,9 +21,15 @@ import {
   KeyRound,
   Bug,
   Eye,
+  HelpCircle,
+  MessageCircleQuestion,
+  Info,
+  ChevronDown,
 } from "lucide-react";
 
 export default function Home() {
+  const [showMore, setShowMore] = useState(false);
+
   const steps = [
     {
       icon: <Search className="w-8 h-8 text-blue-600" />,
@@ -91,7 +98,79 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
+      {/* ✅ Navbar with “More” dropdown and moving arrow */}
+      <div className="relative">
+        <Navbar />
+        <div className="absolute top-6 right-8 hidden md:block z-50">
+          <div
+            className="relative group flex flex-col items-center"
+            onMouseEnter={() => setShowMore(true)}
+            onMouseLeave={() => setShowMore(false)}
+          >
+            {/* 🔽 Animated Arrow (moving, not emoji) */}
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: [0, -8, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.4,
+                ease: "easeInOut",
+              }}
+              className="mb-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-blue-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 12l7-8 7 8"
+                />
+              </svg>
+            </motion.div>
+
+            {/* More button */}
+            <button
+              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-700 transition font-medium"
+            >
+              More
+              <ChevronDown
+                className={`w-5 h-5 transition-transform ${
+                  showMore ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+
+            {/* Dropdown content */}
+            {showMore && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="absolute right-0 mt-2 w-56 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-lg shadow-lg overflow-hidden z-50"
+              >
+                <ul className="text-gray-800 dark:text-gray-200 text-sm">
+                  <li className="flex items-center gap-2 px-4 py-3 hover:bg-blue-50 dark:hover:bg-slate-800 cursor-pointer transition">
+                    <HelpCircle className="w-4 h-4 text-blue-600" /> Help Center
+                  </li>
+                  <li className="flex items-center gap-2 px-4 py-3 hover:bg-blue-50 dark:hover:bg-slate-800 cursor-pointer transition">
+                    <MessageCircleQuestion className="w-4 h-4 text-green-600" /> FAQ
+                  </li>
+                  <li className="flex items-center gap-2 px-4 py-3 hover:bg-blue-50 dark:hover:bg-slate-800 cursor-pointer transition">
+                    <Info className="w-4 h-4 text-amber-500" /> About Us
+                  </li>
+                </ul>
+              </motion.div>
+            )}
+          </div>
+        </div>
+      </div>
+
       <Hero />
 
       {/* 🧭 Process Section */}
