@@ -23,7 +23,7 @@ const preface = [
 const clauseGroups = [
   {
     title: "I. Ownership & Intellectual Property — (“Lock–Monecuer”)",
-    icon: <Lock className="w-6 h-6 text-slate-700" />,
+    icon: <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700" />,
     body: [
       "All rights, title, and interest in and to the Licensed Materials remain the sole and exclusive property of Monecuer Inc and its licensors.",
       "You may not copy, reverse engineer, redistribute, or create derivative works except as explicitly authorized in writing.",
@@ -32,7 +32,7 @@ const clauseGroups = [
   },
   {
     title: "II. License Grant & Scope",
-    icon: <FileText className="w-6 h-6 text-blue-600" />,
+    icon: <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />,
     body: [
       "Monecuer grants you a limited, non-transferable, non-exclusive, revocable license to use the Licensed Materials solely for internal business or educational use.",
       "This license does not convey any rights to distribute, sublicense, or resell the Licensed Materials.",
@@ -41,7 +41,7 @@ const clauseGroups = [
   },
   {
     title: "III. Data Protection & Privacy Compliance",
-    icon: <Database className="w-6 h-6 text-amber-600" />,
+    icon: <Database className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600" />,
     body: [
       "Licensees must comply with all data protection laws applicable to their region, including GDPR, CCPA, and Zimbabwean Cybersecurity Act provisions.",
       "Monecuer enforces strict data encryption, anonymization, and audit controls to ensure privacy integrity.",
@@ -50,7 +50,7 @@ const clauseGroups = [
   },
   {
     title: "IV. Technical Restrictions & Fair Use",
-    icon: <Cpu className="w-6 h-6 text-cyan-600" />,
+    icon: <Cpu className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-600" />,
     body: [
       "Licensees shall not stress-test, benchmark, or attempt to overload Monecuer systems without prior authorization.",
       "Automated access (bots, crawlers, or mass queries) is prohibited unless covered by an API license.",
@@ -59,7 +59,7 @@ const clauseGroups = [
   },
   {
     title: "V. Global Trade Compliance",
-    icon: <Globe2 className="w-6 h-6 text-green-600" />,
+    icon: <Globe2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-600" />,
     body: [
       "Licensee represents and warrants that the Licensed Materials will not be exported, re-exported, or transferred to embargoed countries, restricted individuals, or prohibited end users under global trade laws.",
       "This includes compliance with the U.S. Export Administration Regulations (EAR) and applicable regional export controls.",
@@ -68,7 +68,7 @@ const clauseGroups = [
   },
   {
     title: "VI. Legal Disclaimers & Limitation of Liability",
-    icon: <Scale className="w-6 h-6 text-purple-600" />,
+    icon: <Scale className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />,
     body: [
       "TO THE MAXIMUM EXTENT PERMITTED BY LAW, MONECUER PROVIDES THE LICENSED MATERIALS “AS IS” WITHOUT WARRANTIES OF ANY KIND.",
       "IN NO EVENT SHALL MONECUER BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES.",
@@ -77,7 +77,7 @@ const clauseGroups = [
   },
 ];
 
-// generate 1,000+ extended clauses dynamically
+// Generate extended clauses
 function generateLongClauses(count: number) {
   const arr: { n: number; title: string; text: string }[] = [];
   const topics = [
@@ -110,77 +110,94 @@ function generateLongClauses(count: number) {
   return arr;
 }
 
+// Long but contained inside a scrollable block
 const longClauses = generateLongClauses(1200);
 
-export default function LicensePage() {
+export default function Page() {
   return (
     <>
       <Navbar />
-      <main className="section container-xl pt-28 pb-20">
+      <main className="section container-xl pt-24 sm:pt-28 pb-20 px-4 sm:px-6 max-w-5xl mx-auto text-xs sm:text-sm leading-relaxed">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="h1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
+        <section className="text-center max-w-3xl mx-auto mb-10">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
             Monecuer License Agreement
           </h1>
-          <p className="p mt-3">
-            A comprehensive legal framework governing the use, distribution, and protection
-            of Monecuer technologies — covering software, AI models, cloud infrastructure,
-            and all derivative assets.
+          <p className="mt-3 text-gray-600 dark:text-gray-300">
+            A comprehensive legal framework governing the use, distribution, and
+            protection of Monecuer technologies — including software, AI models,
+            cloud infrastructure, and all derivative assets.
           </p>
-          <div className="mt-4 flex items-center justify-center gap-4">
-            <Lock className="w-6 h-6 text-slate-700" />
-            <ShieldCheck className="w-6 h-6 text-emerald-600" />
-            <FileText className="w-6 h-6 text-blue-600" />
-            <Copyright className="w-6 h-6 text-purple-600" />
+          <div className="mt-4 flex items-center justify-center gap-3 sm:gap-4 text-gray-700 dark:text-gray-200">
+            <Lock className="w-4 h-4 sm:w-5 sm:h-5" />
+            <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-500" />
+            <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
+            <Copyright className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
           </div>
-        </div>
+        </section>
 
         {/* Preface */}
-        <div className="card mb-10">
-          <h2 className="h3 mb-2">Preface</h2>
-          <div className="space-y-3">
+        <section className="bg-white/70 dark:bg-slate-900/70 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-sm p-4 sm:p-6 mb-10">
+          <h2 className="text-sm sm:text-base font-semibold mb-2">
+            Preface
+          </h2>
+          <div className="space-y-2 sm:space-y-3 text-gray-700 dark:text-gray-300">
             {preface.map((p, i) => (
-              <p key={i} className="p">
-                {p}
-              </p>
+              <p key={i}>{p}</p>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Clause Groups */}
-        <div className="grid md:grid-cols-2 gap-6 mb-10">
+        <section className="grid md:grid-cols-2 gap-5 sm:gap-6 mb-10">
           {clauseGroups.map((c, i) => (
-            <div key={i} className="card border border-gray-200 shadow-md hover:shadow-lg">
-              <div className="flex items-center gap-3 mb-3">
+            <div
+              key={i}
+              className="bg-white/80 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-sm p-4 sm:p-5"
+            >
+              <div className="flex items-center gap-3 mb-2">
                 {c.icon}
-                <h3 className="h3">{c.title}</h3>
+                <h3 className="text-xs sm:text-sm font-semibold">
+                  {c.title}
+                </h3>
               </div>
-              {c.body.map((b, j) => (
-                <p key={j} className="p">
-                  {b}
-                </p>
-              ))}
+              <div className="space-y-2 text-[11px] sm:text-xs text-gray-700 dark:text-gray-300">
+                {c.body.map((b, j) => (
+                  <p key={j}>{b}</p>
+                ))}
+              </div>
             </div>
           ))}
-        </div>
+        </section>
 
-        {/* Massive Long Clauses */}
-        <div className="card">
-          <h3 className="h3 mb-3">Extended Operational Clauses</h3>
-          <div className="space-y-3">
+        {/* Extended Operational Clauses (Scrollable) */}
+        <section className="bg-white/80 dark:bg-slate-900/80 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-sm p-4 sm:p-5">
+          <h3 className="text-sm sm:text-base font-semibold mb-2">
+            Extended Operational Clauses
+          </h3>
+          <p className="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 mb-3">
+            The following extended clauses outline detailed expectations around security,
+            ethics, operational standards, and enforcement. They apply to all Licensees
+            using the Monecuer ecosystem, including partners and subcontractors.
+          </p>
+
+          {/* Scroll container to keep page usable on mobile */}
+          <div className="mt-2 max-h-[60vh] overflow-y-auto pr-2 space-y-2 sm:space-y-3 text-[11px] sm:text-xs">
             {longClauses.map((c) => (
-              <p key={c.n} className="p">
-                <span className="font-semibold">
-                  {c.title}:
-                </span>{" "}
-                {c.text}
+              <p key={c.n}>
+                <span className="font-semibold">{c.title}:</span> {c.text}
               </p>
             ))}
           </div>
-        </div>
 
-        {/* Footer */}
-        <p className="p mt-10 text-sm opacity-70 text-center">
+          <p className="mt-3 text-[10px] sm:text-[11px] text-gray-500 dark:text-gray-400">
+            By continuing to access or use Monecuer technologies, the Licensee confirms
+            ongoing compliance with these extended operational clauses.
+          </p>
+        </section>
+
+        {/* Footer Note */}
+        <p className="mt-8 text-[10px] sm:text-xs text-center text-gray-500 dark:text-gray-500">
           © {new Date().getFullYear()} Monecuer Inc. All rights reserved.  
           “Lock–Monecuer” enforced. Proprietary and confidential.
         </p>

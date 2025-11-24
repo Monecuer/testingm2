@@ -61,62 +61,55 @@ export default function SolutionsPage() {
   return (
     <>
       <Navbar />
-      <main className="section container-xl pt-28 pb-20">
-        {/* Hero Section */}
+      <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+
+        {/* Hero */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
-          <h1 className="h1 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
             Solutions
           </h1>
-          <p className="p text-gray-600 mt-3">
-            From startups to enterprises — Monecuer builds technology that’s
-            engineered for speed, security, and scale.
+          <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base mt-3 leading-relaxed">
+            From startups to enterprises — Monecuer builds technology engineered for speed, security, and scale.
           </p>
         </motion.div>
 
         {/* Solutions Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {solutions.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-500"
             >
               <div className="flex items-center gap-3 mb-3">
                 {s.icon}
-                <h3 className="text-lg font-semibold text-gray-800">
-                  {s.title}
-                </h3>
+                <h3 className="text-lg sm:text-xl font-semibold">{s.title}</h3>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* CTA Section */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-center mt-20"
+          className="text-center mt-16 sm:mt-20"
         >
-          <h2 className="h2 mb-3">Transform Your Business with Monecuer</h2>
-          <p className="p mb-6 text-gray-600 max-w-2xl mx-auto">
-            Our team is ready to design, develop, and deploy your next
-            high-impact project. Let’s bring your vision to life — fast and
-            secure.
+          <h2 className="text-xl sm:text-2xl font-bold mb-3">Transform Your Business with Monecuer</h2>
+          <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base mb-6 max-w-2xl mx-auto">
+            Our team is ready to design, develop, and deploy your next high-impact project.
           </p>
-          <a
-            href="/contact"
-            className="btn btn-primary inline-flex items-center justify-center gap-2"
-          >
+          <a href="/contact" className="btn btn-primary px-6 py-3 rounded-lg text-sm sm:text-base">
             Let’s Build Together →
           </a>
         </motion.div>

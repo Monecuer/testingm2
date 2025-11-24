@@ -1,169 +1,197 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import {
+  Mail,
+  ShieldCheck,
+  Lock,
+  FileText,
+  Copyright,
+  Globe2,
+  Cpu,
+  Database,
+  Clock,
+  HelpCircle,
+  ChevronDown,
+} from "lucide-react";
 
-export const metadata = { title: "Privacy Policy — Monecuer Inc." };
+export default function LegalPage() {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
-export default function Page() {
+  const faqs = [
+    {
+      q: "What data do you collect?",
+      a: "We collect only essential information such as name, email, device info, and usage analytics for service improvement. No sensitive personal data is stored unless explicitly required.",
+      icon: <Database size={24} className="text-blue-500" />,
+    },
+    {
+      q: "Is my data secure with Monecuer?",
+      a: "Absolutely. We implement multi-layer encryption, tokenized APIs, secure authentication and 24/7 monitoring. We are GDPR and Cybersecurity Act compliant.",
+      icon: <ShieldCheck size={24} className="text-green-500" />,
+    },
+    {
+      q: "Do you sell or share my private information?",
+      a: "No. We do not sell personal data. We may share limited data only with secure, trusted service providers (e.g. hosting/payment) strictly for operational purposes.",
+      icon: <Lock size={24} className="text-purple-500" />,
+    },
+    {
+      q: "How long do you keep my information?",
+      a: "We retain data only as long as needed for legal compliance, service continuity, and security. When no longer needed, data is deleted or anonymized.",
+      icon: <Clock size={24} className="text-yellow-500" />,
+    },
+  ];
+
   return (
     <>
       <Navbar />
-      <main className="section container-xl pt-28 pb-20 max-w-4xl mx-auto">
-        <h1 className="h1">Privacy Policy</h1>
-        <p className="p mt-4 text-gray-600">
-          This Privacy Policy explains how Monecuer Inc. (“Monecuer”, “we”, “our”, or “us”)
-          collects, uses, shares, and protects your information when you use our websites,
-          apps, and digital services. By using our products, you agree to the terms described below.
-        </p>
+      <main className="container pt-28 pb-20 px-4 max-w-4xl mx-auto">
 
-        {/* SECTION 1 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">1. Information We Collect</h2>
-          <p className="p text-gray-700 mb-3">
-            We collect information to deliver and improve our services. The information we collect
-            depends on how you interact with us, the products you use, and the choices you make,
-            including your privacy settings. Information we may collect includes:
+        {/* HEADER */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-12"
+        >
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
+            Monecuer Legal & Privacy
+          </h1>
+          <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
+            Your security, trust, and privacy are our highest priorities.
           </p>
-          <ul className="list-disc ml-6 text-gray-700 space-y-2">
-            <li><strong>Personal Information:</strong> such as your name, email address, phone number, and billing details when you sign up or purchase a service.</li>
-            <li><strong>Account Data:</strong> login credentials, security preferences, and authentication tokens.</li>
-            <li><strong>Usage Data:</strong> information about how you use our websites, applications, and digital tools.</li>
-            <li><strong>Device Data:</strong> IP address, browser type, operating system, and device identifiers.</li>
-            <li><strong>Communications:</strong> messages you send to us via chat, email, or forms for support or inquiries.</li>
+        </motion.div>
+
+        {/* PRIVACY POLICY */}
+        <section className="mb-16 space-y-6 text-sm leading-relaxed">
+          <h2 className="text-xl font-semibold flex items-center gap-2">
+            <ShieldCheck size={22} className="text-emerald-500" />
+            Privacy Policy
+          </h2>
+          <p>
+            Monecuer Inc. (“we”, “us”, “our”) is committed to protecting your
+            privacy. This policy explains how we collect, process, and protect
+            your personal data in compliance with global regulations (GDPR,
+            CCPA, ZimbabweCyber Act).
+          </p>
+
+          <h3 className="font-semibold mt-4">1. Information We Collect</h3>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>Personal Data: email, name, phone (optional)</li>
+            <li>Technical Data: IP address, device/browser info</li>
+            <li>Service Usage Data: interactions, app stats, behavior insights</li>
+          </ul>
+
+          <h3 className="font-semibold mt-4">2. How We Use Your Data</h3>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>Account creation, platform access, subscription management</li>
+            <li>Fraud prevention, security auditing, safe authentication</li>
+            <li>Analyzing performance to enhance user experience</li>
+            <li>Customer support and business communication</li>
+          </ul>
+
+          <h3 className="font-semibold mt-4">3. Legal Rights of Users</h3>
+          <p>Depending on your region, you can request:</p>
+          <ul className="list-disc ml-6 space-y-2">
+            <li>Access, download or correct your personal data</li>
+            <li>Deletion (Right to be Forgotten)</li>
+            <li>Withdrawal of consent at any time</li>
+            <li>Restriction of processing (GDPR Articles 12–23)</li>
+          </ul>
+
+          <h3 className="font-semibold mt-4">4. Contact Our Data Officer</h3>
+          <div className="flex flex-col items-center">
+            <motion.div
+              initial={{ y: 0, rotate: 0 }}
+              animate={{
+                y: [-2, -10, -20, -10, 0],
+                rotate: [0, 10, 20, 10, 0],
+              }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+              className="bg-blue-100 dark:bg-blue-900 p-3 rounded-full shadow-md mb-3"
+            >
+              <Mail size={26} className="text-blue-600" />
+            </motion.div>
+            <a
+              href="mailto:privacy@monecuer.com"
+              className="text-blue-600 hover:underline"
+            >
+              privacy@monecuer.com
+            </a>
+          </div>
+        </section>
+
+        {/* TERMS OF SERVICE */}
+        <section className="mb-16 space-y-6">
+          <h2 className="text-xl font-semibold flex items-center gap-2">
+            <FileText size={22} className="text-blue-600" />
+            Terms of Service
+          </h2>
+          <p>
+            By using any Monecuer system, platform, AI model, or service — you
+            agree to:
+          </p>
+          <ul className="list-disc ml-6 space-y-2 text-sm">
+            <li>Use our tools ethically — no exploitation or misuse</li>
+            <li>No reverse engineering, unauthorized sale, or reselling products</li>
+            <li>Maintain account confidentiality and data responsibility</li>
+            <li>Respect intellectual property — Monecuer retains IP ownership</li>
+            <li>
+              All disputes governed under the Laws of Zimbabwe & International
+              Cyber Regulations
+            </li>
           </ul>
         </section>
 
-        {/* SECTION 2 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">2. How We Use Your Information</h2>
-          <p className="p text-gray-700 mb-3">
-            We use the collected data responsibly and only for legitimate business purposes,
-            such as:
-          </p>
-          <ul className="list-disc ml-6 text-gray-700 space-y-2">
-            <li>Providing, maintaining, and improving our products and services.</li>
-            <li>Personalizing user experiences and recommending relevant solutions.</li>
-            <li>Communicating updates, technical notices, and security alerts.</li>
-            <li>Processing transactions, invoices, and payment confirmations.</li>
-            <li>Detecting, preventing, and addressing security or fraud concerns.</li>
-            <li>Complying with applicable laws, legal requests, and government regulations.</li>
-          </ul>
+        {/* FAQ SECTION */}
+        <section className="mb-20">
+          <h2 className="text-xl font-semibold flex items-center gap-2 mb-6">
+            <HelpCircle size={22} className="text-cyan-500" />
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-4">
+            {faqs.map((f, i) => (
+              <div
+                key={i}
+                onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
+                className="p-4 border rounded-lg cursor-pointer bg-white dark:bg-slate-800 shadow hover:shadow-md transition"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    {f.icon}
+                    <h3 className="text-sm sm:text-base font-medium">{f.q}</h3>
+                  </div>
+                  <ChevronDown
+                    size={20}
+                    className={`transition-transform ${
+                      openFAQ === i ? "rotate-180 text-blue-500" : ""
+                    }`}
+                  />
+                </div>
+
+                <AnimatePresence>
+                  {openFAQ === i && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="text-xs sm:text-sm mt-3 text-gray-600 dark:text-gray-300"
+                    >
+                      {f.a}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* SECTION 3 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">3. Data Storage & Security</h2>
-          <p className="p text-gray-700">
-            Monecuer employs industry-standard encryption, cloud storage, and security practices
-            to protect your personal information against unauthorized access, alteration,
-            disclosure, or destruction. While we continuously strengthen our systems, no digital
-            platform can guarantee absolute security. You are encouraged to use strong passwords
-            and keep your login credentials confidential.
-          </p>
-        </section>
-
-        {/* SECTION 4 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">4. Data Retention</h2>
-          <p className="p text-gray-700">
-            We retain personal information only as long as it is necessary to provide our services,
-            comply with legal obligations, resolve disputes, and enforce our agreements. When your
-            data is no longer needed, we securely delete or anonymize it.
-          </p>
-        </section>
-
-        {/* SECTION 5 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">5. Sharing & Disclosure</h2>
-          <p className="p text-gray-700 mb-3">
-            We do not sell or rent your personal information. However, we may share limited data
-            in the following cases:
-          </p>
-          <ul className="list-disc ml-6 text-gray-700 space-y-2">
-            <li>With trusted service providers who process data on our behalf (e.g., hosting, analytics, payment processing).</li>
-            <li>When required by law or to respond to valid legal processes.</li>
-            <li>To protect our users, prevent fraud, or ensure the safety of our services.</li>
-            <li>During mergers, acquisitions, or company restructuring — users will be notified in advance.</li>
-          </ul>
-        </section>
-
-        {/* SECTION 6 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">6. Cookies & Tracking Technologies</h2>
-          <p className="p text-gray-700">
-            We use cookies and similar technologies to improve website performance, analyze
-            traffic, and remember user preferences. You can control or disable cookies through
-            your browser settings; however, some site features may not function properly
-            without them.
-          </p>
-        </section>
-
-        {/* SECTION 7 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">7. Your Rights</h2>
-          <p className="p text-gray-700 mb-3">
-            Depending on your location, you may have the following rights regarding your
-            personal data:
-          </p>
-          <ul className="list-disc ml-6 text-gray-700 space-y-2">
-            <li>Access the data we hold about you.</li>
-            <li>Request correction of inaccurate or incomplete data.</li>
-            <li>Request deletion of your personal data (“Right to be Forgotten”).</li>
-            <li>Withdraw consent where processing is based on consent.</li>
-            <li>Object to certain types of processing or request data portability.</li>
-          </ul>
-          <p className="p text-gray-700 mt-3">
-            To exercise any of these rights, please contact us using the details provided below.
-          </p>
-        </section>
-
-        {/* SECTION 8 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">8. International Data Transfers</h2>
-          <p className="p text-gray-700">
-            Monecuer operates globally. Your information may be processed in countries outside
-            your own. When transferring data internationally, we ensure appropriate safeguards
-            (such as encryption and standard contractual clauses) are in place to protect your
-            information.
-          </p>
-        </section>
-
-        {/* SECTION 9 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">9. Children’s Privacy</h2>
-          <p className="p text-gray-700">
-            Our services are not directed to individuals under the age of 13. We do not knowingly
-            collect personal information from children. If you believe a child has provided us
-            with personal data, please contact us immediately for deletion.
-          </p>
-        </section>
-
-        {/* SECTION 10 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">10. Updates to This Policy</h2>
-          <p className="p text-gray-700">
-            We may update this Privacy Policy from time to time to reflect changes in technology,
-            law, or our practices. The “Last Updated” date at the bottom of this page indicates
-            the latest revision. Continued use of our services signifies your acceptance of
-            any changes.
-          </p>
-        </section>
-
-        {/* SECTION 11 */}
-        <section className="mt-10">
-          <h2 className="h2 text-xl font-semibold mb-3">11. Contact Us</h2>
-          <p className="p text-gray-700">
-            If you have questions, requests, or concerns about this Privacy Policy, please contact us:
-          </p>
-          <p className="p text-gray-700 mt-3">
-            <strong>Monecuer Inc.</strong><br />
-            Harare, Zimbabwe<br />
-            Email: <a href="mailto:monecuerinc@gmail.com" className="text-blue-600 hover:underline">monecuerinc@gmail.com</a><br />
-            WhatsApp: <a href="https://wa.me/263782286544" className="text-blue-600 hover:underline">+263 782 286 544</a>
-          </p>
-        </section>
-
-        <p className="text-xs text-gray-500 mt-10 text-center">
-          Last Updated: October 2025 — © {new Date().getFullYear()} Monecuer Inc. All rights reserved.
+        {/* FOOTER LEGAL NOTICE */}
+        <p className="text-center text-xs text-gray-500">
+          © {new Date().getFullYear()} Monecuer Inc. All Rights Reserved.
+          Protected by International IP & Cybersecurity Law.
         </p>
       </main>
       <Footer />

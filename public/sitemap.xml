@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- 🌍 Core Pages -->
+  <!-- Core Pages -->
   <url>
     <loc>https://www.monecuer.com/</loc>
   </url>
@@ -15,6 +15,12 @@
     <loc>https://www.monecuer.com/products</loc>
   </url>
   <url>
+    <loc>https://www.monecuer.com/industries</loc>
+  </url>
+  <url>
+    <loc>https://www.monecuer.com/cybersecurity</loc>
+  </url>
+  <url>
     <loc>https://www.monecuer.com/process</loc>
   </url>
   <url>
@@ -22,12 +28,6 @@
   </url>
   <url>
     <loc>https://www.monecuer.com/pricing</loc>
-  </url>
-  <url>
-    <loc>https://www.monecuer.com/industries</loc>
-  </url>
-  <url>
-    <loc>https://www.monecuer.com/cybersecurity</loc>
   </url>
   <url>
     <loc>https://www.monecuer.com/blog</loc>
@@ -39,7 +39,7 @@
     <loc>https://www.monecuer.com/careers</loc>
   </url>
 
-  <!-- ⚖️ Legal & Info -->
+  <!-- Legal & Info -->
   <url>
     <loc>https://www.monecuer.com/privacy</loc>
   </url>
@@ -48,6 +48,11 @@
   </url>
   <url>
     <loc>https://www.monecuer.com/faq</loc>
+  </url>
+
+  <!-- Founder Page -->
+  <url>
+    <loc>https://www.monecuer.com/founder</loc>
   </url>
 
 </urlset>

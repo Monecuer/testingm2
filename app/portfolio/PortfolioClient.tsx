@@ -5,29 +5,16 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// ⚙️ Replace `slug` and `title` with your internal identifiers.
-// The `urlCode` is a short code mapped internally so you don’t expose the full link.
 const projects = [
   {
-    slug: "proj-001",
-    title: "The263Fx Trading Platform",
-    urlCode: "263fx",
-    description:
-      "Forex-trading brand site built with Next.js and Tailwind. Challenge: convert visitors into leads. Solution: interactive UX + live data overlay. Result: ↑ 35% conversions in 3 months.",
+    name: "The263Fx Trading Platform",
+    website: "https://the263fx.com",
+    description: "High-conversion trading platform with live market data, training modules, and lead-generation funnels.",
   },
   {
-    slug: "proj-002",
-    title: "Lucky Chicken Decision App",
-    urlCode: "lucky-chicken",
-    description:
-      "React-based mobile web app for breeders. Challenge: simplify colour/leg-colour selection by moon phases. Solution: dynamic filters + offline caching. Result: 4.9★ rating across >500 users.",
-  },
-  {
-    slug: "proj-003",
-    title: "Shalawambe Community Portal",
-    urlCode: "shalawambe",
-    description:
-      "Non-profit platform built on JAMstack. Challenge: manage donations and content. Solution: headless CMS + Netlify deploys. Result: 120% growth in donor engagements in 6 months.",
+    name: "Frostmac Solutions Corporate Site",
+    website: "https://frostmacsolutions.com",
+    description: "Professional tech consultancy and engineering site built for Monecuer’s partner division.",
   },
 ];
 
@@ -35,50 +22,55 @@ export default function PortfolioClient() {
   return (
     <>
       <Navbar />
-      <main className="section container-xl pt-28 relative overflow-hidden">
+      <main className="section container-xl pt-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h1 className="h1 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400 font-extrabold">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
             Case Studies
           </h1>
-          <p className="p mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            Selected projects demonstrating real-world impact, full stack delivery and measurable results.
+          <p className="p mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+            Real projects with measurable impact.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((p, i) => (
             <motion.div
-              key={p.slug}
+              key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="card hover:scale-[1.03] transition-transform duration-300"
+              className="card hover:scale-[1.02] transition-transform shadow-lg rounded-xl border dark:border-gray-700 overflow-hidden"
             >
-              {/* Placeholder image or fetch logic */}
-              <div className="aspect-video mb-4 bg-gray-100 dark:bg-slate-800 overflow-hidden rounded-lg">
+              {/* Automatic Thumbnail from Website */}
+              <div className="aspect-video">
                 <Image
-                  src={`/case-previews/${p.urlCode}.jpg`}
-                  alt={`${p.title} preview`}
+                  src={`https://api.microlink.io/?url=${encodeURIComponent(p.website)}&screenshot=true&meta=false&embed=screenshot.url`}
+                  alt={`${p.name} preview`}
                   width={640}
                   height={360}
                   className="object-cover w-full h-full"
+                  unoptimized
                 />
               </div>
-              <div className="h3 mb-2">{p.title}</div>
-              <p className="p text-sm">{p.description}</p>
-              <a
-                href={`/external?code=${encodeURIComponent(p.urlCode)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block btn btn-outline"
-              >
-                View Live
-              </a>
+
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2">{p.name}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">{p.description}</p>
+
+                <a
+                  href={p.website}
+                  target="_blank"
+                  className="inline-block mt-4 text-sm text-blue-600 hover:underline"
+                >
+                  View Live →
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

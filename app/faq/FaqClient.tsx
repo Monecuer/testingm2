@@ -1,183 +1,157 @@
 "use client";
-
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   HelpCircle,
-  Cpu,
+  Globe2,
   ShieldCheck,
-  Rocket,
-  Cloud,
+  Cpu,
+  Clock,
+  Users,
   Zap,
   Code,
-  Users,
+  Rocket,
   MessageCircle,
-  Globe2,
-  Clock,
-  ChevronDown,
+  Cloud,
+  Mail,
+  Phone,
+  Scale,
+  Lock,
 } from "lucide-react";
 
-const faqs = [
-  {
-    q: "What does Monecuer Inc. actually build?",
-    a: "Monecuer Inc. is a multi-division tech company building across Web, Mobile, POS, and AI. Our teams engineer business software, digital experiences, and automation systems that connect people and organizations — from Africa to the world.",
-    icon: <Globe2 className="text-blue-500 animate-pulse" size={28} />,
-  },
-  {
-    q: "Do you use paid APIs or external databases?",
-    a: "No. Monecuer platforms are designed to run lean — with open-source frameworks, local databases, and cloud-free deployment where possible. However, when scaling globally, we integrate with paid APIs like OpenAI, Firebase, or Stripe depending on the client’s infrastructure.",
-    icon: <ShieldCheck className="text-green-500 animate-bounce" size={28} />,
-  },
-  {
-    q: "Can you integrate AI and automation later?",
-    a: "Yes. Every product we build is AI-ready. You can easily plug in LLMs, speech recognition, or automation flows later. We also build custom RAG (Retrieval-Augmented Generation) systems that help businesses turn data into real-time insights.",
-    icon: <Cpu className="text-purple-500 animate-pulse" size={28} />,
-  },
-  {
-    q: "How fast can Monecuer deliver a project?",
-    a: "We build fast and ship faster. A typical MVP or business website takes between 1 to 3 weeks. Large-scale systems with dashboards, databases, and APIs can take 1–2 months depending on features, testing, and client feedback cycles.",
-    icon: <Clock className="text-yellow-500 animate-bounce" size={28} />,
-  },
-  {
-    q: "Who are Monecuer’s main clients?",
-    a: "Our clients range from local Zimbabwean SMEs and churches to startups and international enterprises. We’ve worked with retailers, schools, transport platforms, restaurants, and digital media companies — all powered by the Monecuer ecosystem.",
-    icon: <Users className="text-emerald-500 animate-pulse" size={28} />,
-  },
-  {
-    q: "Do you offer mobile apps and POS systems too?",
-    a: "Yes. We develop Android and iOS apps using React Native and Flutter, and custom POS (Point of Sale) systems for shops, restaurants, and service providers — fully integrated with Ecocash, PayNow, or card payments.",
-    icon: <Zap className="text-orange-500 animate-pulse" size={28} />,
-  },
-  {
-    q: "Is my data safe with Monecuer?",
-    a: "Absolutely. Data privacy is a priority. We use encrypted Firestore, secure authentication, and controlled API access. We comply with international security standards while maintaining lightweight, local-first options for smaller clients.",
-    icon: <ShieldCheck className="text-blue-600 animate-bounce" size={28} />,
-  },
-  {
-    q: "How does the collaboration process work?",
-    a: "It’s simple. You reach out through email or WhatsApp, we schedule a brief discovery call, draft your proposal, and begin design and development immediately. Progress updates are shared weekly, ensuring full transparency.",
-    icon: <MessageCircle className="text-cyan-500 animate-pulse" size={28} />,
-  },
-  {
-    q: "Can I update or manage my website after launch?",
-    a: "Yes — all our platforms are modular and admin-controlled. You’ll have your own dashboard for content, analytics, and updates. For larger systems, we offer optional maintenance or training programs.",
-    icon: <Code className="text-indigo-500 animate-bounce" size={28} />,
-  },
-  {
-    q: "Do you offer long-term support or retainer plans?",
-    a: "Yes, we do. Clients can choose between project-based or monthly support plans. We handle everything — from updates, security patches, and scaling to adding new AI-powered features as your business grows.",
-    icon: <Rocket className="text-pink-500 animate-pulse" size={28} />,
-  },
-  {
-    q: "Where is Monecuer based?",
-    a: "Our headquarters are in Harare, Zimbabwe — but our projects and clients span globally through Monecuer Cloud. The company operates remotely with a network of African and international developers.",
-    icon: <Cloud className="text-sky-500 animate-bounce" size={28} />,
-  },
-];
-
-export default function HelpClient() {
-  const [open, setOpen] = useState<number | null>(0);
-
+export default function MonecuerInfoPage() {
   return (
-    <>
-      <Navbar />
-      <main className="section container-xl pt-28 relative overflow-hidden">
-        {/* background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-transparent to-cyan-50 dark:from-[#0a0a1f]/70 dark:to-[#001f3f]/40 blur-3xl -z-10"></div>
+    <div className="max-w-3xl mx-auto px-4 py-6 text-sm sm:text-base leading-relaxed">
+      {/* FAQ Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <HelpCircle className="text-blue-500 animate-pulse" /> Frequently Asked Questions
+        </h2>
 
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <h1 className="h1 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
-            Help Center
-          </h1>
-          <p className="p mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            We’ve compiled answers to the most common questions about our
-            technology, process, and vision. Need help beyond this? Contact us
-            anytime — we’re always ready to assist.
-          </p>
-        </motion.div>
+        <div className="space-y-6">
+          {/* FAQ CARD TEMPLATE */}
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <Globe2 className="text-blue-500" size={22} /> What services does Monecuer Inc. offer?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              Monecuer Inc. provides AI development, cybersecurity defense, full-stack web and
+              mobile applications, cloud infrastructure, DevOps automation, POS systems,
+              fintech platforms, data analytics, and custom enterprise technology solutions.
+              We design, develop, secure, deploy, and scale solutions across global industries.
+            </p>
+          </div>
 
-        {/* FAQ List */}
-        <div className="space-y-4 max-w-3xl mx-auto">
-          {faqs.map((f, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="card p-5 cursor-pointer hover:shadow-lg transition-all duration-300"
-              onClick={() => setOpen(open === i ? null : i)}
-            >
-              <div className="flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                  {f.icon}
-                  <h3 className="h3">{f.q}</h3>
-                </div>
-                <ChevronDown
-                  size={22}
-                  className={`transition-transform ${
-                    open === i ? "rotate-180 text-blue-500" : ""
-                  }`}
-                />
-              </div>
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <Cpu className="text-purple-500" size={22} /> How do you integrate AI in projects?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              We integrate AI using advanced LLMs, natural language processing, computer vision,
+              speech recognition, and predictive analytics. We build custom automation systems,
+              AI chatbots, smart assistants, recommendation engines, and enterprise intelligence dashboards.
+            </p>
+          </div>
 
-              <AnimatePresence>
-                {open === i && (
-                  <motion.p
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="p mt-3 text-gray-700 dark:text-gray-300"
-                  >
-                    {f.a}
-                  </motion.p>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <ShieldCheck className="text-green-600" size={22} /> How do you protect data?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              We follow ISO 27001, SOC 2, and GDPR standards. Our platforms use encryption,
+              access control, firewalls, vulnerability scanning, threat monitoring, secure cloud
+              architecture, MFA, and zero-trust policies to protect sensitive information.
+            </p>
+          </div>
+
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <Clock className="text-yellow-500" size={22} /> How long does a typical project take?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              MVP or business website: 1–3 weeks.  
+              Cloud dashboards or fintech systems: 1–2 months.  
+              AI/enterprise-scale SaaS platforms: 2–6 months.  
+              Timelines depend on features, revisions, and complexity.
+            </p>
+          </div>
+
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <Users className="text-emerald-600" size={22} /> Who are your clients?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              Startups, retail businesses, hospitals, fintechs, educators, enterprises,
+              churches, NGOs, logistics companies, and international SaaS providers.
+              We build scalable tech for local and global markets.
+            </p>
+          </div>
+
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <Zap className="text-orange-500" size={22} /> Do you build mobile and POS apps?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              Yes. We build cross-platform Flutter and React Native apps, POS payment systems,
+              restaurant software, offline-first inventory dashboards, and delivery apps with
+              secure payment integration (EcoCash, PayNow, Visa, PayPal).
+            </p>
+          </div>
+
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <Code className="text-indigo-600" size={22} /> Which tech stack do you use?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              React, Next.js, TypeScript, Node.js, Python, Django, Java, Flutter, PostgreSQL,
+              Firebase, AWS, Azure, Docker, Kubernetes, OpenAI, and TensorFlow.
+            </p>
+          </div>
+
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <MessageCircle className="text-cyan-600" size={22} /> What support do you offer?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              We provide lifetime technical support, maintenance, monitoring, upgrades,
+              cloud security, API support, and 24/7 WhatsApp-based customer service.
+            </p>
+          </div>
+
+          <div className="border rounded-lg p-4 shadow-sm hover:shadow-md transition">
+            <h3 className="font-semibold flex items-center gap-2 text-gray-800">
+              <Rocket className="text-pink-500" size={22} /> Why should I choose Monecuer?
+            </h3>
+            <p className="mt-2 text-gray-700">
+              We deliver secure, scalable, AI-powered solutions with premium UI/UX,
+              cloud readiness, mobile responsiveness, automation, and full compliance.
+            </p>
+          </div>
         </div>
+      </motion.section>
 
-        {/* Footer Section */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <HelpCircle
-            className="mx-auto text-cyan-500 animate-pulse mb-3"
-            size={40}
-          />
-          <h2 className="h2 mb-3">Still Need Help?</h2>
-          <p className="p mb-5 max-w-2xl mx-auto">
-            Contact our team directly via{" "}
-            <a
-              href="mailto:monecuerinc@gmail.com"
-              className="text-blue-600 hover:underline"
-            >
-              email
-            </a>{" "}
-            or{" "}
-            <a
-              href="https://wa.me/263782286544"
-              className="text-green-600 hover:underline"
-              target="_blank"
-            >
-              WhatsApp
-            </a>{" "}
-            for fast, human support.
-          </p>
-        </motion.div>
-      </main>
-      <Footer />
-    </>
+      {/* Contact CTA */}
+      <motion.div
+        className="text-center mt-10 border p-6 rounded-lg"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+      >
+        <h3 className="text-lg font-semibold mb-2 flex justify-center items-center gap-2">
+          <MessageCircle className="text-blue-500 animate-bounce" /> Still Need Help?
+        </h3>
+        <p className="text-gray-700 mb-4">Contact us directly — we respond fast.</p>
+        <div className="flex justify-center gap-4 text-sm">
+          <a href="mailto:monecuerinc@gmail.com" className="flex items-center gap-1 hover:underline">
+            <Mail size={16} /> Email
+          </a>
+          <a href="https://wa.me/263782286544" target="_blank" className="flex items-center gap-1 hover:underline">
+            <Phone size={16} /> WhatsApp
+          </a>
+        </div>
+      </motion.div>
+    </div>
   );
 }

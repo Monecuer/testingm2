@@ -3,19 +3,21 @@ import { ReactNode } from "react";
 import Chatbot from "@/components/Chatbot";
 
 export const metadata = {
-  title: "Monecuer Inc. — Software & Cybersecurity Company in Zimbabwe",
+  title:
+    "Monecuer Inc. — Software Engineering, AI Academy & Cybersecurity Company in Zimbabwe",
   description:
-    "Monecuer Inc. builds intelligent software and cybersecurity solutions for Africa — specializing in AI, POS, Cloud, and automation systems that empower digital transformation.",
+    "Monecuer Inc. is a Zimbabwean Software Engineering, AI & Cybersecurity company offering intelligent digital solutions, online learning, programming courses, POS systems, and legal cybersecurity services for Africa.",
   keywords:
-    "Monecuer, Monecuer Inc, Cyber Security Zimbabwe, AI, Cloud, POS, SaaS, IT Consulting, Software Development, Web Design, Automation, African Tech Company",
+    "Monecuer, Software Engineering Zimbabwe, Learn Python Africa, Cybersecurity Academy Zimbabwe, AI Courses Africa, POS Software, Cloud Systems, Programming Tutorials, African Tech Company, Software Engineering Lessons",
   authors: [{ name: "Monecuer Inc.", url: "https://www.monecuer.com" }],
   creator: "Monecuer Inc.",
   publisher: "Monecuer Inc.",
   metadataBase: new URL("https://www.monecuer.com"),
   openGraph: {
-    title: "Monecuer Inc. — Engineering Digital Transformation",
+    title:
+      "Monecuer Inc. — Africa's Software Engineering, AI Learning & Cybersecurity Company",
     description:
-      "AI Systems • POS Solutions • Cloud Infrastructure • Cybersecurity • Web & App Development — engineered for Africa’s digital growth.",
+      "AI Courses • Full Stack Training • Cybersecurity Lessons • POS Solutions • Cloud Infrastructure • Web & App Development — engineered for Africa’s digital growth.",
     url: "https://www.monecuer.com",
     siteName: "Monecuer Inc.",
     images: [
@@ -23,7 +25,7 @@ export const metadata = {
         url: "https://www.monecuer.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Monecuer Inc. — Advanced Software & Cybersecurity Solutions",
+        alt: "Monecuer Inc. — Engineering Africa’s Tech Future",
       },
     ],
     locale: "en_US",
@@ -31,9 +33,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Monecuer Inc. — Software & Cybersecurity Solutions",
+    title: "Monecuer Inc. — AI, Software & Cybersecurity",
     description:
-      "Engineering Africa’s digital transformation through AI, POS, Cloud, and secure software platforms.",
+      "Learn Programming • Build AI Projects • Secure Cloud • POS & SaaS Solutions • African Tech Education.",
     creator: "@monecuer31415",
     images: ["https://www.monecuer.com/og-image.jpg"],
   },
@@ -62,7 +64,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* ✅ SEO & Google Verification */}
         <meta name="theme-color" content="#0A0A1F" />
         <meta name="application-name" content="Monecuer Inc." />
         <meta
@@ -71,110 +72,62 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <link rel="canonical" href="https://www.monecuer.com" />
 
-        {/* ✅ JSON-LD Structured Data */}
+        {/* 🌐 Structured Data for Search + AI Learning Services */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": "EducationOrganization",
               name: "Monecuer Inc.",
-              alternateName: "Monecuer Technologies",
+              alternateName: "Monecuer AI Academy",
               url: "https://www.monecuer.com",
               logo: "https://www.monecuer.com/logo.png",
-              foundingDate: "2024",
               founder: {
                 "@type": "Person",
                 name: "Elshaddai Anesu Mugugu",
+                jobTitle: "Software Engineer & Founder",
               },
               sameAs: [
                 "https://www.facebook.com/monecuer",
                 "https://www.instagram.com/monecuer",
                 "https://www.linkedin.com/company/monecuer",
                 "https://twitter.com/monecuer31415",
-              ],
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  telephone: "+263782286544",
-                  contactType: "customer service",
-                  areaServed: "Zimbabwe, Africa",
-                  availableLanguage: ["English"],
-                },
+                "https://github.com/Monecuer",
               ],
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Harare",
                 addressLocality: "Harare",
                 addressRegion: "Harare Province",
-                postalCode: "00000",
                 addressCountry: "ZW",
               },
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+263782286544",
+                  contactType: "customer service",
+                  availableLanguage: ["English"],
+                },
+              ],
               description:
-                "Monecuer Inc. is a Zimbabwean technology company offering AI, Cloud, POS, and Cyber Security solutions for businesses across Africa.",
-              keywords:
-                "Software Company Zimbabwe, Cyber Security, AI, Cloud, POS, SaaS, IT Consulting, Web Development, Automation",
-              knowsAbout: [
-                "Artificial Intelligence",
-                "Cyber Security",
-                "Cloud Computing",
-                "POS Systems",
-                "Web Development",
-                "SaaS",
-              ],
+                "Monecuer Inc. provides AI education, Software Engineering learning programs, legal cybersecurity, POS SaaS, and enterprise-grade digital solutions.",
               serviceType: [
-                "Software Development",
-                "Cyber Security Consulting",
-                "Cloud Infrastructure",
-                "AI Automation",
-                "Point of Sale Systems",
+                "AI & Automation",
+                "Cyber Security (Legal Only)",
+                "Cloud & Infrastructure",
+                "Programming Courses",
+                "Tutor Booking System",
+                "POS & SaaS Development",
+                "Mobile App Development",
               ],
-              areaServed: {
-                "@type": "Place",
-                name: "Africa",
-              },
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Monecuer Services",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "AI & Automation",
-                      description:
-                        "Custom-built artificial intelligence systems that optimize business workflows.",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Cyber Security (Legal Only)",
-                      description:
-                        "Authorized penetration testing, cloud hardening, and incident response.",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "Cloud & Infrastructure Setup",
-                      description:
-                        "Secure, scalable, and monitored cloud solutions for enterprises.",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Service",
-                      name: "POS & SaaS Development",
-                      description:
-                        "Smart, modern point-of-sale systems with AI-driven inventory analytics.",
-                    },
-                  },
-                ],
-              },
+              offersLearning: [
+                "Learn Python",
+                "JavaScript Programming",
+                "AI & Machine Learning Courses",
+                "Cybersecurity Fundamentals",
+                "Next.js Full Stack Development",
+              ],
             }),
           }}
         />
@@ -182,7 +135,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
       <body className="antialiased bg-white dark:bg-[#0A0A1F] text-gray-900 dark:text-gray-100">
         {children}
-        <Chatbot /> {/* ✅ Global chatbot floating button */}
+        <Chatbot />
       </body>
     </html>
   );
