@@ -2,10 +2,31 @@
 
 import { motion } from "framer-motion";
 import { Rocket, Clock } from "lucide-react";
+import Image from "next/image";
 
 export default function ComingSoon() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 text-center">
+
+      {/* Door with Doll Illustration */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-6"
+      >
+        <div className="relative w-64 h-64 mx-auto">
+          <Image
+            src="/coming-soon-door.png" // Replace with your own illustration
+            alt="Monecuer Products Door"
+            fill
+            className="object-contain"
+          />
+        </div>
+        <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+          Waiting outside the door of <span className="font-semibold">Monecuer Products</span> 🚪
+        </p>
+      </motion.div>
 
       {/* Animated Icon */}
       <motion.div
@@ -60,4 +81,3 @@ export default function ComingSoon() {
     </main>
   );
 }
-
