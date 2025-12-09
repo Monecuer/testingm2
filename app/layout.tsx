@@ -4,9 +4,23 @@ import Chatbot from "@/components/Chatbot";
 
 export const metadata = {
   title:
-    "Monecuer Inc. — Software Engineering, AI Academy & Cybersecurity Company in Zimbabwe",
+    "Monecuer Inc is a technology-driven company delivering secure digital solutions, automation
+systems, AI tools, and creative digital platforms for businesses and institutions.",
   description:
-    "Monecuer Inc. is a Zimbabwean Software Engineering, AI & Cybersecurity company offering intelligent digital solutions, online learning, programming courses, POS systems, and legal cybersecurity services for Africa.",
+    "Monecuer Inc is a technology-driven company delivering secure digital solutions, automation
+systems, AI tools, and creative digital platforms for businesses and institutions.
+Core Services:
+- Web & System Development
+- Cybersecurity Audits & Protection
+- SaaS & POS Systems
+- AI Automation & Chatbots
+- Media & Digital Platforms
+Brand Values:
+- Security
+- Innovation
+- Discipline
+- Integrity
+- Scalability.",
   keywords:
     "Monecuer, Software Engineering Zimbabwe, Learn Python Africa, Cybersecurity Academy Zimbabwe, AI Courses Africa, POS Software, Cloud Systems, Programming Tutorials, African Tech Company, Software Engineering Lessons",
   authors: [{ name: "Monecuer Inc.", url: "https://www.monecuer.com" }],
@@ -15,9 +29,21 @@ export const metadata = {
   metadataBase: new URL("https://www.monecuer.com"),
   openGraph: {
     title:
-      "Monecuer Inc. — Africa's Software Engineering, AI Learning & Cybersecurity Company",
+      "Monecuer Inc is a technology-driven company delivering secure digital solutions, automation
+systems, AI tools, and creative digital platforms for businesses and institutions.",
     description:
-      "AI Courses • Full Stack Training • Cybersecurity Lessons • POS Solutions • Cloud Infrastructure • Web & App Development — engineered for Africa’s digital growth.",
+      "Core Services:
+- Web & System Development
+- Cybersecurity Audits & Protection
+- SaaS & POS Systems
+- AI Automation & Chatbots
+- Media & Digital Platforms
+Brand Values:
+- Security
+- Innovation
+- Discipline
+- Integrity
+- Scalability",
     url: "https://www.monecuer.com",
     siteName: "Monecuer Inc.",
     images: [
@@ -25,7 +51,8 @@ export const metadata = {
         url: "https://www.monecuer.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Monecuer Inc. — Engineering Africa’s Tech Future",
+        alt: "Monecuer Inc. —Technology-driven company delivering secure digital solutions, automation
+systems, AI tools, and creative digital platforms for businesses and institutions.",
       },
     ],
     locale: "en_US",
@@ -33,9 +60,11 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Monecuer Inc. — AI, Software & Cybersecurity",
+    title: "Monecuer Inc. —Technology-driven company delivering secure digital solutions, automation
+systems, AI tools, and creative digital platforms for businesses and institutions.",
     description:
-      "Learn Programming • Build AI Projects • Secure Cloud • POS & SaaS Solutions • African Tech Education.",
+      "Technology-driven company delivering secure digital solutions, automation
+systems, AI tools, and creative digital platforms for businesses and institutions.",
     creator: "@monecuer31415",
     images: ["https://www.monecuer.com/og-image.jpg"],
   },
