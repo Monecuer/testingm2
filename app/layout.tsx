@@ -20,7 +20,14 @@ Brand Values:
 - Innovation
 - Discipline
 - Integrity
-- Scalability.",
+- Scalability.
+  Brand Values:
+- Security
+- Innovation
+- Discipline
+- Integrity
+- Scalability
+",
   keywords:
     "Monecuer, Software Engineering Zimbabwe, Learn Python Africa, Cybersecurity Academy Zimbabwe, AI Courses Africa, POS Software, Cloud Systems, Programming Tutorials, African Tech Company, Software Engineering Lessons",
   authors: [{ name: "Monecuer Inc.", url: "https://www.monecuer.com" }],
@@ -38,12 +45,20 @@ systems, AI tools, and creative digital platforms for businesses and institution
 - SaaS & POS Systems
 - AI Automation & Chatbots
 - Media & Digital Platforms
+  
 Brand Values:
 - Security
 - Innovation
 - Discipline
 - Integrity
-- Scalability",
+- Scalability
+  Brand Values:
+- Security
+- Innovation
+- Discipline
+- Integrity
+- Scalability
+",
     url: "https://www.monecuer.com",
     siteName: "Monecuer Inc.",
     images: [
