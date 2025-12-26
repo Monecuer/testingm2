@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -23,6 +24,8 @@ import {
   Building,
   Globe,
   Users,
+  Camera,
+  Video,
 } from "lucide-react";
 
 export default function Home() {
@@ -44,6 +47,14 @@ export default function Home() {
     { icon: <Eye className="text-purple-400 w-10 h-10" />, title: "24/7 Monitoring & Intelligence", desc: "AI-powered surveillance and threat analytics for real-time detection." },
   ];
 
+  const mediaServices = [
+    { title: "Photography", icon: Camera, href: "/media/photography" },
+    { title: "Videography", icon: Video, href: "/media/videography" },
+    { title: "Graphic Design", icon: PenTool, href: "/media/design" },
+    { title: "Content Creation", icon: FileText, href: "/media/content" },
+    { title: "Branding", icon: Rocket, href: "/media/branding" },
+  ];
+
   return (
     <>
       <Navbar />
@@ -54,16 +65,27 @@ export default function Home() {
         <motion.h2 className="h2 text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}>
           How We Build Projects
         </motion.h2>
-        <p className="p text-center mt-3 max-w-2xl mx-auto">Monecuer's structured lifecycle guarantees efficient, scalable delivery.</p>
+        <p className="p text-center mt-3 max-w-2xl mx-auto">
+          Monecuer's structured lifecycle guarantees efficient, scalable delivery.
+        </p>
 
         <div className="relative max-w-5xl mx-auto mt-10">
-          <motion.div className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-gradient-to-b from-blue-500 to-cyan-400 hidden md:block rounded-full"
-            initial={{ height: 0 }} whileInView={{ height: "100%" }} transition={{ duration: 2, ease: "easeInOut" }} />
+          <motion.div
+            className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-gradient-to-b from-blue-500 to-cyan-400 hidden md:block rounded-full"
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          />
 
           <div className="space-y-10 sm:space-y-14 relative z-10">
             {steps.map((s, i) => (
-              <motion.div key={i} className={`flex flex-col sm:flex-row items-center gap-6 ${i % 2 === 0 ? "sm:flex-row-reverse" : ""}`}
-                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
+              <motion.div
+                key={i}
+                className={`flex flex-col sm:flex-row items-center gap-6 ${i % 2 === 0 ? "sm:flex-row-reverse" : ""}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+              >
                 <div className="p-4 rounded-full shadow bg-white dark:bg-slate-900">{s.icon}</div>
                 <div className="max-w-md text-center sm:text-left">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{s.title}</h3>
@@ -78,12 +100,19 @@ export default function Home() {
       {/* 🔐 Cyber Security Section */}
       <section className="py-24 bg-gradient-to-b from-[#0a0a1f] to-[#101028] text-white text-center px-4">
         <motion.h2 className="text-3xl sm:text-4xl font-bold mb-6">Cyber Security Division</motion.h2>
-        <p className="max-w-3xl mx-auto mb-12">AI-driven security, threat mitigation, legal penetration testing, and 24/7 monitoring.</p>
+        <p className="max-w-3xl mx-auto mb-12">
+          AI-driven security, threat mitigation, legal penetration testing, and 24/7 monitoring.
+        </p>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {cyberFeatures.map((f, i) => (
-            <motion.div key={i} className="p-6 sm:p-8 bg-white/10 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10"
-              initial={{ opacity: 0, y: 25 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
+            <motion.div
+              key={i}
+              className="p-6 sm:p-8 bg-white/10 rounded-2xl shadow-lg backdrop-blur-sm border border-white/10"
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+            >
               <div className="flex justify-center mb-5">{f.icon}</div>
               <h3 className="text-lg sm:text-xl font-semibold">{f.title}</h3>
               <p className="text-gray-300 text-sm sm:text-base">{f.desc}</p>
@@ -91,19 +120,46 @@ export default function Home() {
           ))}
         </div>
 
-        <motion.button className="mt-14 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full shadow text-white">Request Security Audit →</motion.button>
+        <motion.button className="mt-14 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-full shadow text-white">
+          Request Security Audit
+        </motion.button>
       </section>
 
-      {/* 🌐 Sponsorship & Partnerships */}
+      {/* 🎥 Media & Creative Division */}
+      <section className="py-24 bg-white dark:bg-[#0b0b18] px-4">
+        <motion.h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+          Media & Creative Division
+        </motion.h2>
+
+        <p className="text-center max-w-2xl mx-auto text-gray-600 dark:text-gray-300 mb-14">
+          Professional visual production and brand storytelling tailored for modern businesses.
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          {mediaServices.map((item, i) => (
+            <motion.a
+              key={i}
+              href={item.href}
+              whileHover={{ y: -6, scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 hover:shadow-xl transition"
+            >
+              <item.icon className="w-10 h-10 text-blue-600 group-hover:rotate-6 transition-transform" />
+              <span className="mt-3 font-medium text-sm text-gray-800 dark:text-white">
+                {item.title}
+              </span>
+            </motion.a>
+          ))}
+        </div>
+      </section>
+
+      {/* 🌐 Partnerships */}
       <section className="py-24 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-[#0b0b18] dark:to-[#0b0b18] text-center px-4 sm:px-8">
-        <motion.div className="flex justify-center mb-4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+        <motion.div className="flex justify-center mb-4">
           <Handshake size={50} className="text-blue-600 dark:text-blue-400" />
         </motion.div>
 
         <h2 className="text-3xl font-bold mb-3">Strategic Partnerships & Collaboration</h2>
-        <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-sm sm:text-base mb-10">
-          We collaborate with enterprises, startups, financial institutions, cloud providers, and cyber firms.
-        </p>
 
         <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto mb-16">
           {[Building, Globe, Shield, Rocket, Users].map((Icon, idx) => (
@@ -112,13 +168,6 @@ export default function Home() {
               <span className="text-xs mt-1">Partner Sector</span>
             </div>
           ))}
-        </div>
-
-        <div className="relative w-full overflow-hidden py-4 bg-blue-50 dark:bg-white/10">
-          <motion.div initial={{ x: "100%" }} animate={{ x: "-100%" }} transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-            className="flex items-center gap-8 text-blue-800 dark:text-blue-200 whitespace-nowrap font-medium text-sm">
-            <Building size={18} /> Enterprise Tech • <Shield size={18} /> Secure Cloud • <Rocket size={18} /> SaaS Innovation • <Users size={18} /> Education & Workforce • <Globe size={18} /> Global Scale Partnerships
-          </motion.div>
         </div>
       </section>
 
