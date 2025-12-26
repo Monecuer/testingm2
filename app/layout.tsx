@@ -3,22 +3,25 @@ import { ReactNode } from "react";
 import Chatbot from "@/components/Chatbot";
 
 export const metadata = {
-  title: "Monecuer Inc | Secure Digital Solutions, AI & SaaS Systems",
+  title:
+    "Monecuer Inc | AI, Cybersecurity, Software, Cloud & Digital Media Solutions",
+
   description:
-    "Monecuer Inc is a technology-driven company delivering secure digital solutions, automation systems, AI tools, and creative digital platforms for businesses and institutions. Core services include Web & System Development, Cybersecurity Audits, SaaS & POS Systems, AI Automation, and Media Platforms. Our brand values are Security, Innovation, Discipline, Integrity, and Scalability.",
+    "Monecuer Inc is a multidisciplinary technology and media company providing AI-driven software solutions, cybersecurity services, cloud infrastructure, full-stack development, and professional media services including photography, videography, content creation, graphic design, and digital branding for businesses and individuals.",
 
   keywords:
-    "Monecuer, Software Engineering Zimbabwe, Cybersecurity Zimbabwe, AI Courses Africa, POS Software, SaaS Systems, Cloud Computing Africa, Programming Tutorials, African Tech Company, Web Development Zimbabwe",
+    "Monecuer Inc, AI solutions, artificial intelligence company, cybersecurity services, penetration testing, cloud infrastructure, SaaS development, full stack development, software company Zimbabwe, digital media company, photography services, videography services, content creation, graphic design, branding agency, business automation, enterprise software, startup technology partner",
 
-  authors: [{ name: "Monecuer Inc.", url: "https://www.monecuer.com" }],
-  creator: "Monecuer Inc.",
-  publisher: "Monecuer Inc.",
+  authors: [{ name: "Monecuer Inc", url: "https://www.monecuer.com" }],
+  creator: "Monecuer Inc",
+  publisher: "Monecuer Inc",
   metadataBase: new URL("https://www.monecuer.com"),
 
   openGraph: {
-    title: "Monecuer Inc | Secure Digital Solutions, AI & SaaS Systems",
+    title:
+      "Monecuer Inc | AI, Cybersecurity, Software & Digital Media Company",
     description:
-      "Technology-driven company delivering secure digital solutions, automation systems, AI tools, and creative digital platforms for businesses and institutions.",
+      "A multidisciplinary technology and media company delivering AI-driven software, cybersecurity, cloud systems, and professional digital media services for modern businesses.",
     url: "https://www.monecuer.com",
     siteName: "Monecuer Inc",
     images: [
@@ -26,7 +29,8 @@ export const metadata = {
         url: "https://www.monecuer.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Monecuer Inc — Secure Digital Solutions & AI Systems",
+        alt:
+          "Monecuer Inc — AI, Cybersecurity, Cloud & Digital Media Solutions",
       },
     ],
     locale: "en_US",
@@ -35,9 +39,10 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Monecuer Inc | Secure Digital Solutions, AI & SaaS Systems",
+    title:
+      "Monecuer Inc | AI, Cybersecurity, Software & Digital Media",
     description:
-      "Technology-driven company delivering secure digital solutions, AI automation, SaaS platforms, and cybersecurity services.",
+      "Secure AI systems, cloud platforms, full-stack software, cybersecurity, and creative digital media services.",
     creator: "@monecuer31415",
     images: ["https://www.monecuer.com/og-image.jpg"],
   },
@@ -66,7 +71,11 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -80,7 +89,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         <link rel="canonical" href="https://www.monecuer.com" />
 
-        {/* ✅ Structured Data (SEO + AI Indexing) */}
+        {/* ✅ Structured Data — Tech + Media Company */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -88,9 +97,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Monecuer Inc",
-              alternateName: "Monecuer AI Academy",
               url: "https://www.monecuer.com",
               logo: "https://www.monecuer.com/logo.png",
+
+              description:
+                "Monecuer Inc is a multidisciplinary technology and media company providing AI-driven software solutions, cybersecurity services, cloud infrastructure, full-stack development, and professional media services including photography, videography, content creation, graphic design, and digital branding.",
 
               founder: {
                 "@type": "Person",
@@ -108,9 +119,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Harare",
                 addressLocality: "Harare",
-                addressRegion: "Harare Province",
                 addressCountry: "ZW",
               },
 
@@ -123,25 +132,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 },
               ],
 
-              description:
-                "Monecuer Inc provides secure digital solutions, AI automation, cybersecurity services (legal only), POS SaaS systems, cloud infrastructure, and enterprise software development.",
-
               serviceType: [
                 "AI & Automation",
-                "Cybersecurity (Legal Only)",
-                "Cloud & Infrastructure",
-                "Programming Education",
-                "POS & SaaS Development",
-                "Mobile App Development",
-                "Web Systems Engineering",
-              ],
-
-              offers: [
-                "Learn Python",
-                "JavaScript Programming",
-                "AI & Machine Learning",
-                "Cybersecurity Fundamentals",
-                "Next.js Full Stack Development",
+                "Cybersecurity Services",
+                "Cloud Infrastructure",
+                "Full Stack Software Development",
+                "SaaS & Enterprise Systems",
+                "Photography Services",
+                "Videography Services",
+                "Content Creation",
+                "Graphic Design",
+                "Digital Branding",
               ],
             }),
           }}
